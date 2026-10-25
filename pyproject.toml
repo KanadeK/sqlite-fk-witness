@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqlite-fk-witness"
+version = "0.1.0"
+description = "Explain SQLite orphan foreign keys with optional bounded row witnesses."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "KanadeK"}]
+dependencies = []
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.scripts]
+sqlite-fk-witness = "sqlite_fk_witness.cli:main"
+
+[project.urls]
+Repository = "https://github.com/KanadeK/sqlite-fk-witness"
+Issues = "https://github.com/KanadeK/sqlite-fk-witness/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
